@@ -9,7 +9,7 @@ import Login from "./components/utilities/Login";
 
 function App() {
   return (
-    <BrowserRouter basename="/vastrave">
+    <BrowserRouter >
       <Routes>
         <Route path="/" element={<Userlayout />}>
           <Route index element={<Home />} />
