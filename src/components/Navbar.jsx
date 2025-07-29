@@ -14,10 +14,10 @@ import Searchcontext from "./utilities/contextprovider";
 function Navbar() {
   const [underline, setunderline] = useState("");
   const [isopen, setisopen] = useState(false);
-  const ordernum = 5;
+
   const [cartopen, setcartopen] = useState(false);
   const [hamburger, sethamburger] = useState(false);
-  const { currentuser } = useContext(Searchcontext);
+  const { currentuser,cart } = useContext(Searchcontext);
 
   const togglehandler = () => {
     setisopen(!isopen);
@@ -88,18 +88,20 @@ function Navbar() {
           onClick={togglecart}
           className="h-6 w-6 mt-1 cursor-pointer"
         />
-        <div className="bg-red-600 flex items-center md:right-11 align-middle right-12 pb-0.5 text-gray-100 justify-center p-0.5 absolute  text-[8px] rounded-full h-3 w-3">
-          {ordernum}
-        </div>
+        {cart.length==0?(<div></div>):(<div className="bg-red-600 flex items-center md:right-11 align-middle right-12 pb-0.5 text-gray-100 justify-center p-0.5 absolute  text-[8px] rounded-full h-3 w-3">
+          {cart.length}
+        </div>)}
+        
         <HiBars3BottomRight
           onClick={toggleburger}
           className="h-6 flex md:hidden  w-6 mt-1.5 cursor-pointer"
         ></HiBars3BottomRight>
 
         {currentuser ? (
+          <Link to={"/userprofile"}>
           <div className="h-7 w-7 hidden sm:flex items-center justify-center rounded-full bg-gray-700 text-white cursor-pointer">
             {currentuser.name?.charAt(0).toUpperCase()}
-          </div>
+          </div></Link>
         ) : (
           <Link to="/signup">
             <HiOutlineUser className="h-6 mt-1 w-7 hidden sm:flex cursor-pointer" />

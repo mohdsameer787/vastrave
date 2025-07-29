@@ -21,7 +21,9 @@ const {setCart,currentuser}=useContext(Searchcontext)
 const addtocart=()=>{
   if(!currentuser){
 navigate("/signup")
+return
   }
+
   setAdding(true)
   setTimeout(() => {
     setCart((prev=>[...prev,data]))
@@ -89,10 +91,7 @@ window.scrollTo({ top: 0  })
 
             <p className="text-[1rem]">{data.description}</p>
 
-<div>
-  <p>size : </p>
- 
-</div>
+
 
   <button   onClick={addtocart}
               disabled={adding}
