@@ -17,7 +17,7 @@ const ProductListing = () => {
     let data = products;
 
     if (categorie) {
-      data = data.filter((product) => product.categories2 == categorie||product.categories==categorie||categorie=="all");
+      data = data.filter((product) => product.categories2 == categorie||product.categories==categorie||categorie=="all"||(categorie=="new"&&product.new==true));
     }
    
 

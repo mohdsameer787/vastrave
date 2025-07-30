@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import assets from "../assets/image";
 function Hero() {
   return (
@@ -10,7 +11,9 @@ function Hero() {
           Summer Collection
         </p>
         <p className="text-white mt-1">explore the fasion and get your style</p>
+        <Link to={`productlisting/new`}>
         <button className="text-white cursor-pointer border border-white rounded h-7 mt-8 font-medium pb-1 w-17">Explore</button>
+      </Link>
       </div>
       <img
         className="w-full  h-[44vh] sm:h-[63vh] md:h-[70vh]"

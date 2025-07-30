@@ -60,16 +60,7 @@ function Navbar() {
         >
           <Link to={`productlisting/${"all"}`}>collection</Link>
         </li>
-        <li
-          onClick={() => setunderline("mobile-app")}
-          className={
-            underline == "mobile-app"
-              ? "border-b-2 hover:text-gray-900 cursor-pointer "
-              : " hover:text-gray-900 cursor-pointer "
-          }
-        >
-          mobile-app
-        </li>
+      
         <li
           onClick={() => setunderline("contact")}
           className={
